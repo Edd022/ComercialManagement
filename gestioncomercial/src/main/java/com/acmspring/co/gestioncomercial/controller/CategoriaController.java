@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("apigc/v1/categoria")
+@RequestMapping("/api/categoria")
 public class CategoriaController {
 
     @Autowired

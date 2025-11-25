@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("apigc/v1/rolusuario")
+@RequestMapping("/api/rol-usuario")
 public class RolUsuarioController {
 
     @Autowired

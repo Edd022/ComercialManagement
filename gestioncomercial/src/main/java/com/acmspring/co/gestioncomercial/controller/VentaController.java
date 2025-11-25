@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("apigc/v1/venta")
+@RequestMapping("/api/venta")
 public class VentaController {
 
     @Autowired

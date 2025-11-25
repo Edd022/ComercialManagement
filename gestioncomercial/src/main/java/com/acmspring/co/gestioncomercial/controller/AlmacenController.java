@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("apigc/v1/almacen")
+@RequestMapping("/api/almacen")
 public class AlmacenController {
 
     @Autowired
