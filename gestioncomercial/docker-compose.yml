@@ -3,7 +3,7 @@ services:
     image: postgres:13
     environment:
       POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: hpta
+      POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: acmdb
     ports:
       - "5433:5432"
