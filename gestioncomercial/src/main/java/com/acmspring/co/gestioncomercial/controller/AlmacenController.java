@@ -51,5 +51,13 @@ public class AlmacenController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    // Consultas avanzadas
+    // 10. Listar almacenes de una ciudad
+    @GetMapping("/ciudad/{ciudadId}")
+    public List<AlmacenEntity> findByCiudad(@PathVariable Long ciudadId) {
+        return almacenService.findByCiudadId(ciudadId);
+    }
 }
+
 

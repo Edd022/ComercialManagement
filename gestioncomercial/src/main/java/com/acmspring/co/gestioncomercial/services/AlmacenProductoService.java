@@ -39,4 +39,10 @@ public class AlmacenProductoService {
         }
         return false;
     }
+
+    // Consultas avanzadas
+    public List<AlmacenProductoEntity> findByAlmacenId(Long almacenId) {
+        return repoAlmacenProducto.findByAlmacenId(almacenId);
+    }
 }
+

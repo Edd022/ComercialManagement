@@ -5,6 +5,7 @@ import com.acmspring.co.gestioncomercial.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,5 +42,31 @@ public class ProductoService {
         }
         return false;
     }
+
+    // Consultas avanzadas
+    public List<ProductoEntity> findByCategoriaId(Integer categoriaId) {
+        return productoRepository.findByCategoriaId(categoriaId);
+    }
+
+    public List<ProductoEntity> findByRangoPrecio(Double precioMin, Double precioMax) {
+        return productoRepository.findByPrecioBetween(precioMin, precioMax);
+    }
+
+    public List<ProductoEntity> findAllOrderByPrecioAsc() {
+        return productoRepository.findAllByOrderByPrecioAsc();
+    }
+
+    public List<ProductoEntity> findAllOrderByPrecioDesc() {
+        return productoRepository.findAllByOrderByPrecioDesc();
+    }
+
+    public List<ProductoEntity> findByFechaCreacionAfter(LocalDateTime fecha) {
+        return productoRepository.findByFechaCreacionAfter(fecha);
+    }
+
+    public List<Object[]> findProductosMasVendidos() {
+        return productoRepository.findProductosMasVendidos();
+    }
 }
+
 

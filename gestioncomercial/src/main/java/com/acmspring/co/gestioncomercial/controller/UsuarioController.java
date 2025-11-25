@@ -51,5 +51,30 @@ public class UsuarioController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    // Consultas avanzadas
+    // 1. Buscar usuarios por apellido
+    @GetMapping("/apellido/{apellido}")
+    public List<UsuarioEntity> findByApellido(@PathVariable String apellido) {
+        return usuarioService.findByApellido(apellido);
+    }
+
+    // 2. Listar usuarios de una ciudad específica
+    @GetMapping("/ciudad/{ciudadId}")
+    public List<UsuarioEntity> findByCiudad(@PathVariable Long ciudadId) {
+        return usuarioService.findByCiudadId(ciudadId);
+    }
+
+    // 3. Listar usuarios por departamento
+    @GetMapping("/departamento/{departamentoId}")
+    public List<UsuarioEntity> findByDepartamento(@PathVariable Long departamentoId) {
+        return usuarioService.findByDepartamentoId(departamentoId);
+    }
+
+    // 4. Buscar usuarios cuyo nombre contenga X texto
+    @GetMapping("/buscar")
+    public List<UsuarioEntity> findByNombreContaining(@RequestParam String texto) {
+        return usuarioService.findByNombreContaining(texto);
+    }
 }
 

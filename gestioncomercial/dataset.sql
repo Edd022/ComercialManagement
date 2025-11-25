@@ -16,9 +16,9 @@ INSERT INTO ciudad (id, nombre, departamento_id_fk) VALUES
 (5, 'Palmira', 3);
 
 -- 3) Almacenes
-INSERT INTO almacen (id, nombre) VALUES
-(1, 'Almacen Central'),
-(2, 'Almacen Secundario');
+INSERT INTO almacen (id, nombre, ciudad_id_fk) VALUES
+(1, 'Almacen Central', 1),
+(2, 'Almacen Secundario', 3);
 
 -- 4) Productos
 -- (fechaCreacion y fechaModificacion usan formato 'YYYY-MM-DD HH:MM:SS')
@@ -54,11 +54,11 @@ INSERT INTO rol_usuario (id, role) VALUES
 
 -- 8) Usuarios (tabla users)
 -- Nota: email y telefono son únicos según la entidad
-INSERT INTO users (id, nombre, apellido, username, password, email, fecha_registro, telefono, rol_usuario_id_fk) VALUES
-(1, 'Juan', 'Perez', 'juanp', 'password123', 'juan.perez@example.com', '2025-01-15 09:30:00', '3001112222', 2),
-(2, 'Maria', 'Gomez', 'mariag', 'password123', 'maria.gomez@example.com', '2025-02-20 10:45:00', '3003334444', 1),
-(3, 'Carlos', 'Lopez', 'carlosl', 'password123', 'carlos.lopez@example.com', '2025-03-03 12:00:00', '3005556666', 2),
-(4, 'Ana', 'Martinez', 'anam', 'password123', 'ana.martinez@example.com', '2025-04-01 08:20:00', '3007778888', 3);
+INSERT INTO users (id, nombre, apellido, username, password, email, fecha_registro, telefono, rol_usuario_id_fk, ciudad_id_fk) VALUES
+(1, 'Juan', 'Perez', 'juanp', 'password123', 'juan.perez@example.com', '2025-01-15 09:30:00', '3001112222', 2, 1),
+(2, 'Maria', 'Gomez', 'mariag', 'password123', 'maria.gomez@example.com', '2025-02-20 10:45:00', '3003334444', 1, 3),
+(3, 'Carlos', 'Lopez', 'carlosl', 'password123', 'carlos.lopez@example.com', '2025-03-03 12:00:00', '3005556666', 2, 1),
+(4, 'Ana', 'Martinez', 'anam', 'password123', 'ana.martinez@example.com', '2025-04-01 08:20:00', '3007778888', 3, 4);
 
 -- 9) Almacen-Producto (tabla almacen_producto)
 -- Esta entidad tiene el campo id sin GeneratedValue, por eso asignamos id explícitos

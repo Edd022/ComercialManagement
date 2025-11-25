@@ -41,5 +41,12 @@ public class AlmacenService {
         }
         return false;
     }
+
+    // Consultas avanzadas
+    // 10. Listar almacenes de una ciudad
+    public List<AlmacenEntity> findByCiudadId(Long ciudadId) {
+        return almacenRepository.findByCiudadId(ciudadId);
+    }
 }
+
 

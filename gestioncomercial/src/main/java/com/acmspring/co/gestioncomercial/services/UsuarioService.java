@@ -41,5 +41,22 @@ public class UsuarioService {
         }
         return false;
     }
+
+    // Consultas avanzadas
+    public List<UsuarioEntity> findByApellido(String apellido) {
+        return usuarioRepository.findByApellido(apellido);
+    }
+
+    public List<UsuarioEntity> findByCiudadId(Long ciudadId) {
+        return usuarioRepository.findByCiudadId(ciudadId);
+    }
+
+    public List<UsuarioEntity> findByDepartamentoId(Long departamentoId) {
+        return usuarioRepository.findByDepartamentoId(departamentoId);
+    }
+
+    public List<UsuarioEntity> findByNombreContaining(String texto) {
+        return usuarioRepository.findByNombreContainingIgnoreCase(texto);
+    }
 }
 

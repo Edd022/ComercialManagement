@@ -15,6 +15,11 @@ public class AlmacenEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+
+    @ManyToOne
+    @JoinColumn(name = "ciudad_id_fk")
+    private Ciudad ciudad;
+
     /*
     @OneToMany (mappedBy = "almacen", cascade = CascadeType.ALL)
     private List<AlmacenProductoEntity> almacenProductos = new java.util.ArrayList<>();*/

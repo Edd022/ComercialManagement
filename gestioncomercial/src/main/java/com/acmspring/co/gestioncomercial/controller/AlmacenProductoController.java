@@ -48,4 +48,12 @@ public class AlmacenProductoController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    // Consultas avanzadas
+    // 9. Listar todos los productos de un almacén
+    @GetMapping("/almacen/{almacenId}")
+    public List<AlmacenProductoEntity> findByAlmacen(@PathVariable Long almacenId) {
+        return Service.findByAlmacenId(almacenId);
+    }
 }
+

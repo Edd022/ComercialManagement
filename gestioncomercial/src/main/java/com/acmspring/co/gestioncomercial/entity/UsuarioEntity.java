@@ -31,6 +31,10 @@ public class UsuarioEntity {
     @Column(length = 10, nullable = false, unique = true)
     private String telefono;
 
+    @ManyToOne
+    @JoinColumn(name = "ciudad_id_fk")
+    private Ciudad ciudad;
+
     //el fetch EAGER hace que traiga los datos de la otra tabla
     // (lo trae por defecto ManyToOne), LAZY
     @ManyToOne(cascade = CascadeType.PERSIST)

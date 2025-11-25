@@ -5,6 +5,7 @@ import com.acmspring.co.gestioncomercial.repository.VentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,5 +42,19 @@ public class VentaService {
         }
         return false;
     }
+
+    // Consultas avanzadas
+    public List<VentaEntity> findByClienteId(Integer clienteId) {
+        return ventaRepository.findByClienteId(clienteId);
+    }
+
+    public List<Object[]> findTotalVendidoPorFecha(LocalDateTime fecha) {
+        return ventaRepository.findTotalVendidoPorFecha(fecha);
+    }
+
+    public List<VentaEntity> findVentasConMontoMayorA(Double monto) {
+        return ventaRepository.findVentasConMontoMayorA(monto);
+    }
 }
+
 
